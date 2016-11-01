@@ -13,7 +13,7 @@ module.exports = function (grunt) {
             style: 'compact'
           },
           files: {
-            'public/main.css': 'src/css/main.scss'
+            'public/main.css': 'src/scss/main.scss'
           }
         }
     };
