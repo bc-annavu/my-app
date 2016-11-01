@@ -1,0 +1,87 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home { width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+/*
+These "retina group" variables are mappings for the naming and pairing of normal and retina sprites.
+
+The list formatted variables are intended for mixins like `retina-sprite` and `retina-sprites`.
+*/
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home { @include sprite-width($icon-home);
+}
+
+.icon-email { @include sprite($icon-email);
+}
+*/
+/*
+The `retina-sprite` mixin sets up rules and a media query for a sprite/retina sprite. It should be used with a "retina group" variable.
+
+The media query is from CSS Tricks: https://css-tricks.com/snippets/css/retina-display-media-query/
+
+$icon-home-group: ('icon-home', $icon-home, $icon-home-2x, );
+
+.icon-home { @include retina-sprite($icon-home-group);
+}
+*/
+/*
+The `sprites` mixin generates identical output to the CSS template but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+/*
+The `retina-sprites` mixin generates a CSS rule and media query for retina groups This yields the same output as CSS retina template but can be overridden in SCSS
+
+@include retina-sprites($retina-groups);
+*/
+meta.foundation-version { font-family: "/5.5.3/"; }
+
+meta.foundation-mq-small { font-family: "/only screen/"; width: 0; }
+
+meta.foundation-mq-small-only { font-family: "/only screen and (max-width: 769px)/"; width: 0; }
+
+meta.foundation-mq-medium { font-family: "/only screen and (min-width:769px)/"; width: 769px; }
+
+meta.foundation-mq-medium-only { font-family: "/only screen and (min-width:769px) and (max-width:1025px)/"; width: 769px; }
+
+meta.foundation-mq-large { font-family: "/only screen and (min-width:1025px)/"; width: 1025px; }
+
+meta.foundation-mq-large-only { font-family: "/only screen and (min-width:1025px) and (max-width:1281px)/"; width: 1025px; }
+
+meta.foundation-mq-xlarge { font-family: "/only screen and (min-width:1281px)/"; width: 1281px; }
+
+meta.foundation-mq-xlarge-only { font-family: "/only screen and (min-width:1281px) and (max-width:1681px)/"; width: 1281px; }
+
+meta.foundation-mq-xxlarge { font-family: "/only screen and (min-width:1681px)/"; width: 1681px; }
+
+meta.foundation-data-attribute-namespace { font-family: false; }
+
+/*doc
+---
+title: ActionBar
+name: action_bar
+category: Patterns
+---
+```html_example
+<form class="actionBar"> <fieldset class="form-fieldset actionBar-section"> <div class="form-field"> <button class="button" type="submit"> Add </button> <button class="button button--icon"> <span class="u-hiddenVisually">Remove</span> <icon glyph="ic-delete"></icon> </button> </div> </fieldset>
+ <fieldset class="form-fieldset actionBar-section"> <div class="form-field"> <select class="form-select" name="select1" id="select1"> <option>Choose an action</option> <option value="1">Bulk Edit Selected</option> <option value="2">Label all options</option> </select> </div> </fieldset>
+ <fieldset class="form-fieldset actionBar-section"> <div class="form-field"> <input class="form-input has-action" placeholder="Filter" type="search"> <button class="button button--icon button--inputAction"> <span class="u-hiddenVisually">Filter</span> <icon glyph="ic-filter-list"></icon> </button> </div> </fieldset>
+ <a class="actionBar-section" href="#"> Search </a>
+
+</form>
+```
+
+```sass_file_example
+src/settings/bigcommerce/actionBar/_settings.scss
+```
+*/
