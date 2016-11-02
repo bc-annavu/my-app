@@ -9,6 +9,16 @@ module.exports = function (grunt) {
         styles: ['./public/css/**/*']
     };
 
+    gruntConfig.copy = {
+        styles: {
+            expand: true,
+            cwd: './bower_components/bcapp-pattern-lab/dist/css/',
+            src: '**',
+            dest: './public/css/',
+            flatten: true,
+        }
+    };
+
     gruntConfig.sass = {
         dist: {
           options: {
@@ -34,11 +44,12 @@ module.exports = function (grunt) {
 
         styles: {
             files: ['./src/scss/**'],
-            tasks: ['clean', 'sass']
+            tasks: ['clean', 'copy', 'sass']
         }
     };
 
     grunt.initConfig(gruntConfig);
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
@@ -46,7 +57,7 @@ module.exports = function (grunt) {
     grunt.registerTask(
         'styles',
         function () {
-            let tasks = ['clean', 'sass', 'watch'];
+            let tasks = ['clean', 'copy', 'sass', 'watch'];
 
             grunt.task.run(tasks);
         }
