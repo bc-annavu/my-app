@@ -1,0 +1,11 @@
+{
+    "ignoredDependencies": [
+        "angular",
+        "angular-animate",
+        "angular-credit-cards",
+        "angular-gettext",
+        "angular-messages",
+        "angular-sanitize",
+        "angular-ui-router"
+    ]
+}

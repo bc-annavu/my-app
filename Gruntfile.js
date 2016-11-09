@@ -6,7 +6,8 @@ module.exports = function (grunt) {
     let gruntConfig = {};
 
     gruntConfig.clean = {
-        styles: ['./public/css/**/*']
+        styles: ['./public/css/**/*'],
+        fonts: ['./public/fonts/**/*']
     };
 
     gruntConfig.copy = {
@@ -15,7 +16,20 @@ module.exports = function (grunt) {
             cwd: './bower_components/bcapp-pattern-lab/dist/css/',
             src: '**',
             dest: './public/css/',
-            flatten: true,
+            flatten: true
+        },
+        js: {
+            expand: true,
+            cwd: './bower_components/bcapp-pattern-lab/dist/js/',
+            src: '**',
+            dest: './public/js/',
+            flatten: true
+        },
+        fonts: {
+            expand: true,
+            cwd: './src/fonts/',
+            src: '**/*',
+            dest: './public/fonts/'
         }
     };
 
